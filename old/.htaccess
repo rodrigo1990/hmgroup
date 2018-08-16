@@ -1,0 +1,6 @@
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^unpluggedmusic\.com\.ar$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.unpluggedmusic\.com\.ar$
+RewriteRule ^/?$ "http\:\/\/unplugged\-music\.com\.ar" [R=301,L]
+

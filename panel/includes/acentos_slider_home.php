@@ -1,0 +1,39 @@
+<?php
+		$linea1 = utf8_encode($fila['linea1']);
+        $linea1 = html_entity_decode($linea1);
+        $linea1 = str_replace("Ã¡", "á",$linea1);
+        $linea1 = str_replace("Ã©", "é",$linea1);
+        $linea1 = str_replace("Ã*", "í",$linea1);
+        $linea1 = str_replace("Ã³", "ó",$linea1);
+        $linea1 = str_replace("Ãº", "ú",$linea1);
+        $linea1 = str_replace("Ã", "Á",$linea1);
+        $linea1 = str_replace("Ã‰", "É",$linea1);
+        $linea1 = str_replace("Ã", "Í",$linea1);
+        $linea1 = str_replace("Ã“", "Ó",$linea1);
+        $linea1 = str_replace("Ãš", "Ú",$linea1);
+        $linea1 = str_replace("Ã±", "ñ",$linea1);
+        $linea1 = str_replace("Ã‘", "Ñ",$linea1);
+        $linea1 = str_replace("Â¿", "¿",$linea1);
+        $linea1 = str_replace("Â«", "'",$linea1);
+        $linea1 = str_replace("Â»", "'",$linea1);
+        $linea1 = str_replace("Â¡", "¡",$linea1);
+		
+		$linea2 = utf8_encode($fila['linea2']);
+        $linea2 = html_entity_decode($linea2);
+        $linea2 = str_replace("Ã¡", "á",$linea2);
+        $linea2 = str_replace("Ã©", "é",$linea2);
+        $linea2 = str_replace("Ã*", "í",$linea2);
+        $linea2 = str_replace("Ã³", "ó",$linea2);
+        $linea2 = str_replace("Ãº", "ú",$linea2);
+        $linea2 = str_replace("Ã", "Á",$linea2);
+        $linea2 = str_replace("Ã‰", "É",$linea2);
+        $linea2 = str_replace("Ã", "Í",$linea2);
+        $linea2 = str_replace("Ã“", "Ó",$linea2);
+        $linea2 = str_replace("Ãš", "Ú",$linea2);
+        $linea2 = str_replace("Ã±", "ñ",$linea2);
+        $linea2 = str_replace("Ã‘", "Ñ",$linea2);
+        $linea2 = str_replace("Â¿", "¿",$linea2);
+        $linea2 = str_replace("Â«", "'",$linea2);
+        $linea2 = str_replace("Â»", "'",$linea2);
+        $linea2 = str_replace("Â¡", "¡",$linea2); 
+?>

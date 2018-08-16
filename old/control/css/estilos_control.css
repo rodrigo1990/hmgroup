@@ -1,0 +1,343 @@
+/*************** GENERAL *******************/
+body{
+	background-color:#D6D3C6;
+	margin-top:2px;
+	margin-left:1px;
+}
+div{
+	margin:0px;
+	padding:0px;
+}
+li{
+	margin:0px;
+	padding:0px;
+}
+ul{
+	margin:0px;
+	padding:0px;
+}
+a{
+	margin:0px;
+	padding:0px;
+	text-decoration:none;
+}
+form{
+	margin:0px;
+	padding:0px;
+}
+#documento{
+	width:990px;
+	margin:auto;
+	/*background-color:#F7F3F7;*/
+	background-color:#E7E7E7;
+	/*border:#66FF00 1px solid;*/
+	min-height:500px;
+	height:auto !important;
+	height:500px;
+	
+}
+#bannerHeader{
+	height:100px;
+	text-align:center;
+	/*background-color:#31285A;*/
+	background-color:#101010;
+	/*background-image:url(../img/fondo_header.gif);*/
+	/*background-repeat:repeat-x;*/
+}
+#bannerHeader span{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 30px;
+	color: #FFFFFF;
+	margin-left: 20px;
+	margin-top: 20px;
+}
+#menuPrincipal{
+	background-image:url(../img/fondo_menu.gif);
+	/*background-repeat:repeat-x;*/
+	height:23px;
+	margin:0px;
+	padding:0px;
+}
+
+#menuPrincipal ul li{
+	list-style:none;
+	display:inline;
+	background-image:url(../img/fondo_fin_menu.gif);
+	background-position:right;
+	background-repeat:no-repeat;
+	margin:0px;
+	padding:0px;
+}
+#menuPrincipal ul li a, #menuPrincipal ul li a:link, #menuPrincipal ul li a:active, #menuPrincipal ul li a:visited {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color:#333333;
+	font-weight: bold;
+	padding-right: 2px;
+	padding-left: 2px;
+	padding-top:5px;
+	text-decoration: none;
+	display:block;
+	float:left;	
+	height:18px;
+	
+}
+#menuPrincipal ul li a:hover {
+	text-decoration: underline;	
+}
+.menu_on{
+	opacity:.5;
+	filter:alpha(opacity=50);
+}
+#colIzquierda{
+	width:200px;
+	float:left;
+}
+
+#colDerecha{
+	margin-left:210px;
+}
+
+#marcoSec{
+	margin-top:20px;
+	margin-left:5px;
+	/*border-color:D6D3c6;
+	border-style:solid;
+	border-width:2px;*/
+}
+#marcoSec div{
+	margin:0px;
+	border-color:#666666;
+	border-style:solid;
+	border-width:1px;
+}
+
+#marcoSec div span{
+	margin:0px;
+	display:block;
+	height:23px;
+	background-image:url(../img/fondo_menu.gif);
+	background-repeat:repeat-x;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bolder;
+	color: #333333;
+	padding-top: 3px;
+	padding-left: 10px;
+}
+
+.division{
+	clear:both;
+}
+
+#marcoSec div ul li a, #marcoSec div ul li a:active, #marcoSec div ul li a:link, #marcoSec div ul li a:visited{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+	text-decoration: none;
+	font-weight: bold;
+	padding-left:10px;
+}
+
+#marcoSec div ul li a:hover{
+	text-decoration:underline;
+}
+
+#marcoSec div ul li{
+	list-style:none;
+}
+
+#pie{
+	width:990px;
+	margin:auto;
+	text-align:center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	color: #FFFFFF;
+	background-color: #211000;
+}
+.boton {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #333333;
+	background-color: #D6D3C6;
+	border: thin outset #CCCCCC;
+	cursor:pointer;
+}
+.textoForm{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #333333;
+}
+/************* LOGIN ******************/
+#marcoLogin{
+	width:50%;
+	margin-left:110px;;
+	text-align:center;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
+.divFormLogin{
+	padding:3px;
+	text-align:left;
+}
+
+#login_cuerpo{
+	/*background-color:#FFFFFF;*/
+}
+
+.login_label{
+	display:block;
+	width:150px;
+	float:left;
+	text-align:right;
+	padding-right:5px;
+}
+
+#login_divBoton{
+	text-align:left;
+	width:100%;
+	padding:10px;
+	padding-left:150px;
+}
+
+#marcoInicioModulo{
+	padding-top:30px;
+	padding-left:200px;
+	padding-bottom:30px;
+}
+
+#marcoInicioModulo img{
+	float:left;
+	vertical-align:middle;
+}
+
+/************** FIN LOGIN **************/
+
+
+
+
+/**************** TABLAS ********************/
+
+.textoListado {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #000000;
+}
+
+.tabla {
+	margin-top: 20px;
+	margin-right: 0px;
+	margin-bottom: 10px;
+	margin-left: 0px;
+	border: 1px solid #000000;
+}
+
+.tituloListado {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #333333;
+	background-repeat: repeat-x;
+	padding: 2px;
+}
+
+.record_row1 td{
+	background-color:#CCCCCC;
+}
+
+.record_row0 td{
+	background-color:#F7F3F7;
+}
+
+/**************** FIN TABLAS ****************/
+
+/****************FORMULARIOS *****************/
+
+.textoTituloForm {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #333333;
+	padding-bottom:10px;
+	padding-top:10px;
+}
+
+.divDataForm{
+	margin-left:30px;
+}
+.divDataForm div{
+	margin-top:5px;
+	margin-bottom:5px;
+	/*border:#FF3300 1px solid;*/
+}
+.divDataForm label{
+	display:block;
+	float:left;
+	width:200px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #333333;
+	/*border:#33FF00 1px solid;*/
+}
+
+.divDataForm textarea{
+	/*margin-left:30px;*/
+	/*border:#00FFFF 1px solid;*/
+	height:80px; 
+	width:400px;
+	margin-bottom:2px;
+}
+
+.divDataForm.boton{
+	/*margin-left:30px;*/
+	/*border:#00FFFF 1px solid;*/
+	margin-bottom:2px;
+}
+
+.txtInput{
+	width:200px;
+}
+
+/**************** FIN FORMULARIOS ************************/
+
+#contenedorImg{
+	padding:2px;
+	border:#666666 2px solid;
+	width:700px;
+	margin-left:30px;
+	margin-bottom:10px;
+	padding-bottom:10px;
+}
+
+.container{
+	width:170px; 
+	float:left; 
+	text-align:center; 
+	padding:8px; 
+}
+
+.container ul{
+	margin:0px;
+	padding:0px;
+}
+
+.container ul li{
+	list-style:none;
+	display:inline;
+	padding-left:5px;
+}
+
+.container ul li img{
+	padding-left:5px;
+	padding-right:5px;
+}
+
+.encabezadoTabla{
+	height:23px;
+	background-image:url(../img/fondo_menu.gif);
+}
