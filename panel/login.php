@@ -1,6 +1,6 @@
 <?php
-	error_reporting(0);
-	
+include("conexion.php");
+error_reporting(0);
 	$_POST = evita_sqlinjection($_POST);
 	$_GET = evita_sqlinjection($_GET);
 	$_REQUEST = evita_sqlinjection($_REQUEST);
@@ -23,21 +23,27 @@
 	if($_POST['submit'])
 	{
 		$usu_login = $_POST['username'];
-		$usu_clave = $_POST['password'];
-		include("conexion.php");
-		$consulta = "Select usu_nombre from usuarios where usu_login='$usu_login' and usu_clave='$usu_clave' ";
-		$resultado = mysql_query($consulta);
-		$cant = mysql_num_rows($resultado);
-		if($cant != 1)
-		{
-			//ERROR
-			$error=1;
-		}
-		else
-		{
+		$usu_clave = md5($_POST['password']);
+
+		$stmt=$mysqli->prepare("SELECT usu_clave
+									  FROM usuarios
+									  WHERE usu_login=(?) AND usu_clave=(?)");
+
+		$stmt->bind_param("ss",$usu_login,$usu_clave);
+
+		$stmt->execute();
+
+		$resultado=$stmt->get_result();
+
+		$fila=$resultado->fetch_assoc();
+
+		if($fila["usu_clave"]==$usu_clave){
 			session_start();
 			$_SESSION[login] = "ok";
+			$stmt->close();
 			header("location:index.php");
+		}else{
+			$error=1;
 		}
 	}
 	?>
@@ -77,6 +83,7 @@
 
 		<!-- Head Libs -->
 		<script src="assets/vendor/modernizr/modernizr.js"></script>
+		<script src='https://www.google.com/recaptcha/api.js'></script>
 	</head>
 	<body>
 		<!-- start: page -->
@@ -91,7 +98,7 @@
 						<h2 class="title text-uppercase text-weight-bold m-none"><i class="fa fa-user mr-xs"></i> INGRESAR</h2>
 					</div>
 					<div class="panel-body">
-						<form action="login.php" method="post">
+						<form id="form" action="login.php" method="post">
 							<div class="form-group mb-lg">
 								<label>Usuario:</label>
 								<div class="input-group input-group-icon">
@@ -124,6 +131,13 @@
 								</div>
 								<div class="col-sm-4 text-right">
 									<input type="submit" name="submit" class="btn btn-primary hidden-xs" value="Ingresar" />
+									<!--  <button
+									class="g-recaptcha btn btn-primary hidden-xs"
+									data-sitekey="6LeagmoUAAAAANgPbe8bVsI0Myf-D88ToK_dEvFi"
+									data-callback="onSubmit">
+									Ingresar
+									</button>-->
+
 								</div>
 							</div>
 
@@ -135,7 +149,14 @@
 			</div>
 		</section>
 		<!-- end: page -->
+		
 
+
+		<script>
+	       function onSubmit(token) {
+	         document.getElementById("form").submit();
+	       }
+     	</script>
 		<!-- Vendor -->
 		<script src="assets/vendor/jquery/jquery.js"></script>
 		<script src="assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>
@@ -144,15 +165,11 @@
 		<script src="assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 		<script src="assets/vendor/magnific-popup/magnific-popup.js"></script>
 		<script src="assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
-		
 		<!-- Theme Base, Components and Settings -->
 		<script src="assets/javascripts/theme.js"></script>
-		
 		<!-- Theme Custom -->
 		<script src="assets/javascripts/theme.custom.js"></script>
-		
 		<!-- Theme Initialization Files -->
 		<script src="assets/javascripts/theme.init.js"></script>
-
 	</body>
 </html>

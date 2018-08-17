@@ -1,9 +1,16 @@
+
 <?php include "header.php" ?>
 <body class="background-c">
 <?php include "menu.php" ?>
 <?php 
 
-
+if($_GET['c']){
+if(ctype_digit((string)$_GET['c'])!=false){
+echo "<h1>HOLA</h1>";
+}else{
+     header('Location: index.php');
+}
+}
 
 
  ?>
@@ -31,8 +38,7 @@
             <?php
             if($_GET['c'])
             {
-              if(ctype_digit((string)$_GET['c'])!=false){
-
+              
               $categoria_actual = $_GET['c'];
               if($categoria_seleccionada == $categoria_actual)
               {
@@ -55,10 +61,7 @@
                 </div>
                 <?php
               }
-            }
-            else{
-              header('Location: index.php');
-            }
+            
             }//if($_GET['c'])
        
             ?>
@@ -76,32 +79,23 @@
         } 
         if($_GET['c']) 
         {
-          if(ctype_digit((string)$_GET['c'])!=false){
+          $categoria_actual = $_GET['c'];
 
-            $categoria_actual = $_GET['c'];
-            $consulta_categoria = "SELECT id, titulo FROM categorias WHERE id = $categoria_actual";
-            $resultado_categoria = mysql_query($consulta_categoria);
-            $fila_categorias = mysql_fetch_array($resultado_categoria);
-            $titulo=utf8_encode($fila_categorias['titulo']);
-            echo $titulo;
-
-          }else{
-            header('Location: index.php');
-          }
+          $consulta_categoria = "SELECT id, titulo FROM categorias WHERE id = $categoria_actual";
+          $resultado_categoria = mysql_query($consulta_categoria);
+          $fila_categorias = mysql_fetch_array($resultado_categoria);
+          $titulo=utf8_encode($fila_categorias['titulo']);
+          echo $titulo;
         }
         if($_GET['s']) 
         {
-          if(ctype_digit((string)$_GET['c'])!=false){
-            $subcategoria_actual = $_GET['s'];
+          $subcategoria_actual = $_GET['s'];
 
-            $consulta_subcategoria = "SELECT id, categoria, titulo FROM subcategorias WHERE id = $subcategoria_actual AND categoria = $categoria_actual";
-            $resultado_subcategoria = mysql_query($consulta_subcategoria);
-            $fila_subcategoria = mysql_fetch_array($resultado_subcategoria);
-            $titulo = utf8_encode($fila_subcategoria['titulo']);
-            echo ' - ' . $titulo;
-          }else{
-            header('Location: index.php');
-          }
+          $consulta_subcategoria = "SELECT id, categoria, titulo FROM subcategorias WHERE id = $subcategoria_actual AND categoria = $categoria_actual";
+          $resultado_subcategoria = mysql_query($consulta_subcategoria);
+          $fila_subcategoria = mysql_fetch_array($resultado_subcategoria);
+          $titulo = utf8_encode($fila_subcategoria['titulo']);
+          echo ' - ' . $titulo;
         }
         ?>
       </div>
@@ -120,14 +114,9 @@
       }
       else if($_GET['c'])
       {
-        if(ctype_digit((string)$_GET['c'])!=false){
-          $categoria_actual = $_GET['c'];
+        $categoria_actual = $_GET['c'];
 
-          $consulta_productos = "SELECT id, categoria, subcategoria, titulo, descripcion, foto, destacado, recordListingID FROM productos WHERE categoria=$categoria_actual ORDER BY recordListingID ASC";
-        }else{
-          header('Location: index.php');
-        }
-
+        $consulta_productos = "SELECT id, categoria, subcategoria, titulo, descripcion, foto, destacado, recordListingID FROM productos WHERE categoria=$categoria_actual ORDER BY recordListingID ASC";
       }
 
       $resultado_productos = mysql_query($consulta_productos);
